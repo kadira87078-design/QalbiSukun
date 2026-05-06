@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    
+    <!-- Google Fonts: Playfair Display (Headings) and Roboto (Body/Nav) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <title>'Spotify - Web Player: Music for everyone'</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utility.css">
+
+</head>
+
+<body>
+
+    <div class="cantainer flex bg-black ">
+        <div class="left ">
+            <div class="close">
+                <img class="invert" src="img/close.svg" alt="">
+            </div>
+            <div class="home bg-grey rounded m1 p1">
+
+                <div class="logo">
+                    <img width="200px" src="img/logo.png" alt="">
+                </div>
+                <div class="Explore">
+                    <img class="invert" src="img/explore.svg" alt="">
+                    <div>Explore Naats</div>
+                </div>
+
+                <div class="shortcontainer">
+                    <div class="house">
+                        <img src="img/Home.svg" id="logo">
+                        <div>Home</div>
+                    </div>
+                    <div class="search-box">
+                        <img src="img/search.svg" class="search-icon" style="cursor: pointer;">
+
+                        <div class="search-text">Search</div>
+
+                        <input type="text" id="searchInput" placeholder="Search song...">
+                    </div>
+                    <div class="Library">
+                        <img src="img/library.svg" alt="">
+                        <div>Library</div>
+                    </div>
+                </div>
+            </div>
+            <div class="libirary bg-grey rounded m1 p1">
+                <div class="heading ">
+                    <img src="img/Playlist.svg" alt="">
+                    <h3>Playlist</h3>
+
+                </div>
+
+                <div class="songlist">
+                    <ul>
+                        <li>
+                            <img class="invert" src="img/" alt="">
+                            <div class="info">
+                                <div>Song Name</div>
+                                <div>song Artist</div>
+                            </div>
+                            <div class="playnow">
+
+                                <img class="invert" src="img/play.svg" alt="">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer">
+                    <div><a href="https://www.spotify.com/in-en/legal/"><span>Legal</span></a></div>
+                    <div><a href="https://www.spotify.com/in-en/safetyandprivacy/"><span>Safety & Privacy
+                                Center</span></a></div>
+                    <div><a href="https://www.spotify.com/in-en/legal/privacy-policy/"><span>Privacy Policy</span></a>
+                    </div>
+                    <div><a href="https://www.spotify.com/in-en/legal/cookies-policy/"><span>Cookies</span></a></div>
+                    <div><a href="https://www.spotify.com/in-en/legal/privacy-policy/#s3"><span>About Ads</span></a>
+                    </div>
+                    <div><a href="https://www.spotify.com/in-en/accessibility/"><span>Accessibility</span></a></div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="right  bg-grey rounded  p1">
+            <div class="header">
+                <div class="nav">
+                    <div class="hamburgerContainer">
+                        <img class="invert hamburger" src="img/hamburger.svg" alt="">
+                        <img src="img/arrow1.svg" alt="">
+                        <img src="img/arrow2.svg" alt="">
+
+                    </div>
+                </div>
+                <div id="authArea">
+                    <!-- <div class="signuplogo">
+                        <img width="32px" height="32px" src="img/signuplogo.jpg" alt="">
+                    </div> -->
+                    <button id="signupBtn" class="signupbtn">Sign up</button>
+                    <button id="loginBtn" class="loginbtn">Log in</button>
+                </div>
+
+                <!-- 👤 Profile -->
+                <div id="profile" style="display:none;">
+                    <img id="avatarImg" class="avatar">
+                </div>
+            </div>
+
+            <!-- 🔥 IMPORTANT: header ke bahar -->
+            <div id="dropdown"></div>
+
+            <!-- 👤 Profile Card Modal -->
+            <div id="profileCardModal" class="profile-card-modal">
+                <div class="profile-card-content">
+                    <img id="profileCardImg" class="profile-card-img" src="img/default.jpg" alt="">
+                    <h3 id="profileCardName">Username</h3>
+                    <p id="profileCardEmail">email@example.com</p>
+                    <button id="logoutBtn" class="logout-btn">Logout</button>
+                </div>
+            </div>
+
+            <div class="SpotifyPlaylist">
+                <h2>QalbiSukun Featured Playlists</h2>
+                <div class="cardcantainer">
+
+                    <!-- Card 1: Muhammad Owais Raza Qadri -->
+                    <div data-folder="Muhammad Owais Raza Qadr" class="card">
+                        <div class="play">
+                            <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#1ED760" />
+                                        <stop offset="100%" stop-color="#1DB954" />
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="12" cy="12" r="11" fill="url(#grad1)" />
+                                <polygon points="9,7 17,12 9,17" fill="black" />
+                            </svg>
+                        </div>
+                        <img src="img/owais_raza.jpg" alt="">
+                        <h4>Muhammad Owais Raza Qadri</h4>
+                        <p>The world's most famous Naat collection</p>
+                    </div>
+
+                    <!-- Card 2: Sayyed Abdul Wasi Qadri Razavi -->
+                    <div data-folder="Sayyed Abdul Wasi Qadri Razavi" class="card">
+                        <div class="play">
+                            <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#1ED760" />
+                                        <stop offset="100%" stop-color="#1DB954" />
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="12" cy="12" r="11" fill="url(#grad2)" />
+                                <polygon points="9,7 17,12 9,17" fill="black" />
+                            </svg>
+                        </div>
+                        <img width="80" height="150" src="img/sayyed_wasi.png" alt="">
+                        <h4>Sayyed Abdul Wasi Qadri Razavi</h4>
+                        <p>Heart-touching and peaceful vocals</p>
+                    </div>
+                    <!-- Card 3: Hafiz Muhammad Tahir Qadri -->
+                    <div data-folder="Hafiz Muhammad Tahir Qadri" class="card">
+                        <div class="play">
+                            <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#1ED760" />
+                                        <stop offset="100%" stop-color="#1DB954" />
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="12" cy="12" r="11" fill="url(#grad2)" />
+                                <polygon points="9,7 17,12 9,17" fill="black" />
+                            </svg>
+                        </div>
+                        <img width="80" height="150" src="img/tahir-qadri.jpg" alt="">
+                        <h4>Hafiz Muhammad Tahir Qadri</h4>
+                        <p>Powerful Naats to refresh your soul</p>
+                    </div>
+
+                    <!-- Card 4: Muhammad Zohaib Qadri Ashrafi -->
+                    <div data-folder="Muhammad Zohaib Qadri Ashrafi" class="card">
+                        <div class="play">
+                            <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#1ED760" />
+                                        <stop offset="100%" stop-color="#1DB954" />
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="12" cy="12" r="11" fill="url(#grad2)" />
+                                <polygon points="9,7 17,12 9,17" fill="black" />
+                            </svg>
+                        </div>
+                        <img width="80" height="150" src="img/zohaib_ashrafi.jpg" alt="">
+                        <h4>Muhammad Zohaib Qadri Ashrafi</h4>
+                        <p>Beautiful and melodious Naat Sharif</p>
+                    </div>
+
+                    <!-- Card 5: Ahmad Raza Qadri Attari-->
+                    <div data-folder="Ahmad Raza Qadri Attari" class="card">
+                        <div class="play">
+                            <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#1ED760" />
+                                        <stop offset="100%" stop-color="#1DB954" />
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="12" cy="12" r="11" fill="url(#grad2)" />
+                                <polygon points="9,7 17,12 9,17" fill="black" />
+                            </svg>
+                        </div>
+                        <img width="80" height="150" src="img/ahmed_raza.jpg" alt="">
+                        <h4>Ahmad Raza Qadri Attari</h4>
+                        <p>New and relaxing spiritual Kalam</p>
+                    </div>
+
+                    <!-- Card 6: Salam-->
+                    <div data-folder="Salam" class="card">
+                        <div class="play">
+                            <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#1ED760" />
+                                        <stop offset="100%" stop-color="#1DB954" />
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="12" cy="12" r="11" fill="url(#grad2)" />
+                                <polygon points="9,7 17,12 9,17" fill="black" />
+                            </svg>
+                        </div>
+                        <img src="img/Salam.jpg" alt="">
+                        <h4>Salam</h4>
+                        <p>Beautiful collection of soulful Salams</p>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <div class="playbar">
+
+        <div class="playbar-left">
+            <img id="albumArt" class="album-art" style="display: none;">
+            <div class="songinfo"></div>
+        </div>
+
+        <div class="songbutton">
+            <div class="songbutton-icons">
+                <img id="previous" src="img/previous.svg" alt="prev" style="cursor: pointer;">
+                <img id="play" src="img/play1.svg" alt="play" style="cursor: pointer;">
+                <img id="next" src="img/next.svg" alt="next" style="cursor: pointer;">
+            </div>
+
+            <div class="seekbar">
+                <div class="circle"></div>
+            </div>
+        </div>
+
+        <div class="timevol">
+            <div class="songtime"> </div>
+            <div class="volume">
+                <img class="volume-icon" src="img/volume.svg" style="cursor: pointer;">
+                <div class="range">
+
+                    <input type="range" name="volume" min="0" max="100" value="50">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+
+</html>

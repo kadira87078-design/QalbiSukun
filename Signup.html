@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg,#1e1e2f,#121212);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.box {
+    background: #181818;
+    padding: 30px;
+    border-radius: 15px;
+    width: 300px;
+    text-align: center;
+}
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background: #2a2a2a;
+    border: none;
+    color: white;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background: #1db954;
+    border: none;
+    cursor: pointer;
+}
+.google {
+    margin-top: 10px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2 style="color:white;">Sign Up</h2>
+     <input type="file" id="avatar" accept="image/*">
+    <input type="text" id="username" placeholder="Username">
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+
+    <button id="signupBtn">Sign Up</button>
+
+  
+
+    <p style="color:white;">
+        Already have account? <a href="login.html">Login</a>
+    </p>
+</div>
+
+<script>
+document.getElementById("signupBtn").addEventListener("click", () => {
+
+    document.getElementById("signupBtn").addEventListener("click", async () => {
+    let username = document.getElementById("username").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let avatarFile = document.getElementById("avatar").files[0];
+
+    if(!username || !email || !password){
+        alert("Fill all fields");
+        return;
+    }
+
+    // 🔥 Avatar को Data URL में convert करो
+    let avatarData = null;
+    if(avatarFile) {
+        const reader = new FileReader();
+        await new Promise((resolve) => {
+            reader.onload = (e) => {
+                avatarData = e.target.result; // Data URL
+                resolve();
+            };
+            reader.readAsDataURL(avatarFile);
+        });
+    }
+
+    let user = { username, email, password, avatar: avatarData };
+
+    localStorage.setItem("user", JSON.stringify(user));
+
+    alert("Signup Successful");
+
+    window.location.href = "login.html";
+});
+});
+</script>
+
+</body>
+</html>
