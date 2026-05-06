@@ -43,7 +43,7 @@ function PlayMusic(track, pause = false) {
     // 🔥 clean track (important)
     track = track.replaceAll("\\", "/").split("/").pop();
 
-    currentsong.src = `/${currFolder}/${track}`;
+    currentsong.src = `${currFolder}/${track}`;
 
     if (!pause) {
         currentsong.play();
